@@ -1,0 +1,47 @@
+.container {
+  min-height: 90vh;
+}
+.header {
+  background: $light-red;
+  background: linear-gradient(90deg, $very-light-red 10%, $light-red 70%);
+  position: relative;
+  min-height: 80vh;
+  overflow: hidden;
+  justify-content: space-evenly;
+
+  img {
+    position: absolute;
+    display: block;
+    max-width: 150%;
+    top: -140%;
+    left: 0%;
+  }
+  &-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 15vh;
+    font-size: 1.6rem;
+    color: $white;
+    &-nav {
+      z-index: 999;
+      display: flex;
+      #logo {
+        margin-right: 8rem;
+      }
+      ul {
+        display: flex;
+        li {
+          margin-right: 3rem;
+          &:last-child {
+            margin-right: 0rem;
+          }
+        }
+      }
+    }
+    &-user {
+      z-index: 999;
+      display: flex;
+    }
+  }
+}
