@@ -8,13 +8,13 @@
   min-height: 80vh;
   overflow: hidden;
   justify-content: space-evenly;
-
+  border-bottom-left-radius: 70px;
   img {
     position: absolute;
     display: block;
     max-width: 150%;
     top: -140%;
-    left: 0%;
+    left: -20%;
   }
   &-nav {
     display: flex;
@@ -32,7 +32,19 @@
       ul {
         display: flex;
         li {
-          margin-right: 3rem;
+          margin-right: 6rem;
+          position: relative;
+          &:after {
+            content: "";
+            position: absolute;
+            top: 5%;
+            margin: 0.4rem;
+            width: 1.5rem;
+            height: 1.5rem;
+            background-image: url(/images/icon-arrow-light.svg);
+            background-size: contain;
+            background-repeat: no-repeat;
+          }
           &:last-child {
             margin-right: 0rem;
           }
@@ -42,6 +54,57 @@
     &-user {
       z-index: 999;
       display: flex;
+      a {
+        margin-right: 6rem;
+        &:last-child {
+          margin-right: 0rem;
+        }
+      }
     }
   }
+  &-main {
+    z-index: 999;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: $white;
+    h1 {
+      font-size: 6rem;
+      padding: 1rem;
+    }
+    p {
+      font-size: 2.5rem;
+      padding: 2rem;
+    }
+
+    &-links {
+      padding-top: 3rem;
+      a {
+        margin-right: 5rem;
+        font-size: 1.8rem;
+        &:last-child {
+          margin-right: 0rem;
+        }
+      }
+    }
+  }
+}
+#whiteback {
+  background-color: $white;
+  color: $light-red;
+  padding: 1.2rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+}
+#borderedlink {
+  padding: 1.2rem 2rem;
+  border-radius: 50px;
+  color: $white;
+  border: 1.5px solid $white;
 }
