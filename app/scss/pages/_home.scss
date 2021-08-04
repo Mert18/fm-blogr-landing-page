@@ -5,16 +5,26 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   &-content {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 2rem;
+
+    @include respond(phone) {
+      flex-direction: column-reverse;
+      padding: 0rem;
+      margin-bottom: 6rem;
+    }
+    @include respond(tab-port) {
+      flex-direction: column-reverse;
+      margin-bottom: 6rem;
+    }
   }
   &-left {
-    padding: 6rem;
     font-size: 2rem;
     flex: 1;
+
     article {
       margin: 5rem;
       line-height: 30px;
@@ -29,7 +39,6 @@
   }
   &-right {
     flex: 1;
-
     img {
       max-width: 100%;
       display: block;
@@ -60,6 +69,15 @@
   margin-bottom: 4rem;
   border-top-right-radius: 90px;
   border-bottom-left-radius: 80px;
+
+  @include respond(phone) {
+    flex-direction: column;
+    height: 120vh;
+  }
+  @include respond(tab-port) {
+    flex-direction: column;
+    height: 120vh;
+  }
   &-phones {
     flex: 1;
   }
@@ -67,13 +85,31 @@
     flex: 1;
     margin-right: 2rem 10rem 0rem 0rem;
     line-height: 30px;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     h2 {
       font-size: 3rem;
       padding: 2rem;
+      color: $white;
     }
     p {
       font-size: 2rem;
       padding: 2rem;
+      margin-bottom: 4rem;
+      color: $grayish-blue;
+    }
+    @include respond(phone) {
+      p {
+        padding: 4rem;
+      }
+    }
+    @include respond(tab-port) {
+      p {
+        padding: 4rem;
+      }
     }
   }
 }
@@ -82,6 +118,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  @include respond(phone) {
+    flex-direction: column;
+    text-align: center;
+  }
+  @include respond(tab-port) {
+    flex-direction: column;
+    text-align: center;
+  }
   &-img {
     flex: 1;
     img {
@@ -117,21 +161,34 @@
   background: $very-dark-black-blue;
   height: 40vh;
   border-top-right-radius: 80px;
+
   h2 {
     font-size: 3rem;
     color: $white;
     display: flex;
     justify-self: flex-start;
-    align-items: start;
-    height: 60%;
   }
   ul li {
     color: $grayish-blue;
     padding: 0.6rem;
     font-size: 1.2rem;
+    &:hover {
+      text-decoration: underline;
+      cursor: pointer;
+    }
     span {
       color: $white;
       font-size: 1.4rem;
     }
+  }
+  @include respond(phone) {
+    flex-direction: column;
+    height: 90vh;
+    text-align: center;
+  }
+  @include respond(tab-port) {
+    flex-direction: column;
+    height: 90vh;
+    text-align: center;
   }
 }

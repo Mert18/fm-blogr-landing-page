@@ -1,2 +1,2 @@
-"use strict";console.log("JS is working.");
+"use strict";var connectMenu=document.querySelector("#connectnav"),connectButton=document.querySelector("#connect");connectButton.addEventListener("click",(function(){"none"===connectMenu.style.display?connectMenu.style.display="block":connectMenu.style.display="none"}));
 //# sourceMappingURL=script.js.map

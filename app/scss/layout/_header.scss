@@ -1,33 +1,63 @@
 .container {
   min-height: 90vh;
 }
+
+#topimg {
+  z-index: 9999;
+  margin-right: 4rem;
+}
 .header {
   background: $light-red;
   background: linear-gradient(90deg, $very-light-red 10%, $light-red 70%);
   position: relative;
   min-height: 80vh;
   overflow: hidden;
-  justify-content: space-evenly;
   border-bottom-left-radius: 70px;
-  img {
-    position: absolute;
-    display: block;
-    max-width: 150%;
-    top: -140%;
-    left: -20%;
+  display: flex;
+  justify-content: center;
+  @include respond(phone) {
+    justify-content: space-evenly;
+  }
+  &-mobile {
+    display: none;
+    margin-top: 3.6rem;
+    @include respond(phone) {
+      display: block;
+    }
+    div {
+      width: 9vw;
+      height: 0.5vh;
+      margin: 0.8rem;
+      background: white;
+    }
+  }
+  #header-img {
+    img {
+      position: absolute;
+      display: block;
+      max-width: 150%;
+      top: -140%;
+      left: -20%;
+    }
   }
   &-nav {
     display: flex;
     align-items: center;
-    justify-content: space-around;
     height: 15vh;
     font-size: 1.6rem;
     color: $white;
+
     &-nav {
+      @include respond(phone) {
+        display: none;
+      }
       z-index: 999;
       display: flex;
-      #logo {
-        margin-right: 8rem;
+
+      img {
+        display: block;
+        max-width: 100%;
+        max-height: 100%;
       }
       ul {
         display: flex;
@@ -52,10 +82,17 @@
       }
     }
     &-user {
+      margin-left: 6rem;
+      @include respond(phone) {
+        display: none;
+      }
       z-index: 999;
       display: flex;
       a {
         margin-right: 6rem;
+        &:hover {
+          cursor: pointer;
+        }
         &:last-child {
           margin-right: 0rem;
         }
@@ -77,6 +114,12 @@
     h1 {
       font-size: 6rem;
       padding: 1rem;
+      @include respond(tab-port) {
+        font-size: 4rem;
+      }
+      @include respond(phone) {
+        font-size: 3rem;
+      }
     }
     p {
       font-size: 2.5rem;
@@ -88,6 +131,9 @@
       a {
         margin-right: 5rem;
         font-size: 1.8rem;
+        &:hover {
+          cursor: pointer;
+        }
         &:last-child {
           margin-right: 0rem;
         }
@@ -101,10 +147,51 @@
   padding: 1.2rem 2rem;
   border-radius: 50px;
   font-weight: 600;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: $very-light-red;
+    color: $white;
+    transition: all 0.2s ease;
+  }
 }
+
 #borderedlink {
   padding: 1.2rem 2rem;
   border-radius: 50px;
   color: $white;
+  font-weight: 700;
   border: 1.5px solid $white;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: $white;
+    transition: all 0.2s ease;
+    color: $very-light-red;
+  }
+}
+
+#connect {
+  position: relative;
+  &:hover {
+    cursor: pointer;
+  }
+}
+#connectnav {
+  position: absolute;
+  top: 150%;
+  left: -30%;
+  background-color: $white;
+  color: $very-dark-desaturated-blue;
+  padding: 1.5rem;
+  width: 200%;
+  display: none;
+  li {
+    margin: 0.9rem 0rem;
+    &:hover {
+      color: $very-dark-black-blue;
+      font-weight: 700;
+      cursor: pointer;
+    }
+  }
 }
